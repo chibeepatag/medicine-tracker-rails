@@ -1,16 +1,78 @@
-<p id="notice"><%= notice %></p>
-
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Patients', patients_path %>
 <p>
-  <strong>Urn:</strong>
+  <strong>URN:</strong>
   <%= @patient.urn %>
 </p>
-
 <p>
   <strong>Name:</strong>
   <%= @patient.name %>
 </p>
 
-<%= link_to 'Events', patient_events_path(@patient) %>
-<%= link_to 'New Event', new_patient_event_path(@patient) %>
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<p id="notice"><%= notice %></p>
+<p>
+
+<h1>Events</h1>
+<%= link_to 'New Event', new_patient_event_path(@patient) %> <br/>
+<table>
+  <thead>
+    <tr>
+      <th>Event date</th>
+      <th>Severity</th>
+      <th>Organ</th>
+      <th>Reaction</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patient.events.each do |event| %>
+      <tr>
+        <td><%= event.event_date %></td>
+        <td><%= event.severity %></td>
+        <td><%= event.organ %></td>
+        <td><%= event.reaction %></td>
+        <td><%= link_to 'Edit', edit_patient_event_path(@patient, event) %></td>
+        <td><%= link_to 'Destroy', patient_event_path(@patient, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</p>
+
+<p>
+
+<h1>Medicines</h1>
+<%= link_to 'New Medicine', new_patient_medicine_path(@patient) %><br/>
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Antibiotic</th>
+      <th>Dose</th>
+      <th>Frequency</th>
+      <th>Route</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient.medicines.each do |medicine| %>
+      <tr>
+        <td><%= medicine.medicine_class %></td>
+        <td><%= medicine.antibiotic %></td>
+        <td><%= medicine.dose %></td>
+        <td><%= medicine.frequency %></td>
+        <td><%= medicine.route %></td>
+        <td><%= medicine.start_date %></td>
+        <td><%= medicine.end_date %></td>
+        <td><%= link_to 'Edit', edit_patient_medicine_path(@patient, medicine) %></td>
+        <td><%= link_to 'Destroy', patient_medicine_path(@patient, medicine), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</p>

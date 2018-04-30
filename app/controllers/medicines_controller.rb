@@ -29,7 +29,7 @@ class MedicinesController < ApplicationController
 
     respond_to do |format|
       if @medicine.save
-        format.html { redirect_to patient_medicines_path(@patient), notice: 'Medicine was successfully created.' }
+        format.html { redirect_to patient_path(@patient), notice: 'Medicine was successfully created.' }
         format.json { render :show, status: :created, location: @medicine }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MedicinesController < ApplicationController
   def update
     respond_to do |format|
       if @medicine.update(medicine_params)
-        format.html { redirect_to patient_medicines_path(@patient), notice: 'Medicine was successfully updated.' }
+        format.html { redirect_to patient_path(@patient), notice: 'Medicine was successfully updated.' }
         format.json { render :show, status: :ok, location: @medicine }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MedicinesController < ApplicationController
   def destroy
     @medicine.destroy
     respond_to do |format|
-      format.html { redirect_to patient_medicines_path, notice: 'Medicine was successfully destroyed.' }
+      format.html { redirect_to patient_path(@patient), notice: 'Medicine was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -14,7 +14,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= link_to patient.urn, edit_patient_path(patient) %></td>
+        <td><%= link_to patient.urn, patient_path(patient) %></td>
         <td><%= patient.name %></td>
         <td><%= link_to 'Events', patient_events_path(patient) %></td>
         <td><%= link_to 'Medicines', patient_medicines_path(patient) %></td>
