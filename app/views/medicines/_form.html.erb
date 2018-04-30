@@ -23,17 +23,17 @@
 
   <div class="field">
     <%= form.label :dose %>
-    <%= form.text_field :dose, id: :medicine_dose %>
+    <%= form.select(:dose, options_from_collection_for_select(Dose.all, :name, :name)) %>
   </div>
 
   <div class="field">
     <%= form.label :frequency %>
-    <%= form.text_field :frequency, id: :medicine_frequency %>
+    <%= form.select(:frequency, options_from_collection_for_select(Frequency.all, :name, :name)) %>
   </div>
 
   <div class="field">
     <%= form.label :route %>
-    <%= form.text_field :route, id: :medicine_route %>
+    <%= form.select(:route, options_from_collection_for_select(Route.all, :name, :name)) %>
   </div>
 
   <div class="field">

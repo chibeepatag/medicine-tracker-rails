@@ -18,17 +18,17 @@
 
   <div class="field">
     <%= form.label :severity %>
-    <%= form.text_field :severity, id: :event_severity %>
+    <%= form.select(:severity, options_from_collection_for_select(Severity.all, :name, :name)) %>
   </div>
 
   <div class="field">
     <%= form.label :organ %>
-    <%= form.text_field :organ, id: :event_organ %>
+    <%= form.select(:organ, options_from_collection_for_select(Organ.all, :name, :name)) %>
   </div>
 
   <div class="field">
     <%= form.label :reaction %>
-    <%= form.text_field :reaction, id: :event_reaction %>
+    <%= form.select(:reaction, options_from_collection_for_select(Reaction.all, :name, :name)) %>
   </div>
 
   <div class="actions">
