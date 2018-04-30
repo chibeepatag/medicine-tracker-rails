@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.event_date %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @event.severity %>
+</p>
+
+<p>
+  <strong>Organ:</strong>
+  <%= @event.organ %>
+</p>
+
+<p>
+  <strong>Reaction:</strong>
+  <%= @event.reaction %>
+</p>
+
+<%= link_to 'Edit', edit_patient_event_path(patient_id: @patient.id, event_id: @event.id) %> |
+<%= link_to 'Back', patient_event_path(@patient, @event) %>

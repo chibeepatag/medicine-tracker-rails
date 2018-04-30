@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event date</th>
+      <th>Severity</th>
+      <th>Organ</th>
+      <th>Reaction</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_date %></td>
+        <td><%= event.severity %></td>
+        <td><%= event.organ %></td>
+        <td><%= event.reaction %></td>
+        <td><%= link_to 'Edit', edit_patient_event_path(patient_id: event.patient.id, id: event.id) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_patient_event_path(patient: @patient) %>

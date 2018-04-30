@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @medicine.class %>
+</p>
+
+<p>
+  <strong>Antibiotic:</strong>
+  <%= @medicine.antibiotic %>
+</p>
+
+<p>
+  <strong>Dose:</strong>
+  <%= @medicine.dose %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @medicine.frequency %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @medicine.route %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @medicine.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @medicine.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_medicine_path(@medicine) %> |
+<%= link_to 'Back', medicines_path %>
