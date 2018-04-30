@@ -20,7 +20,8 @@
         <td><%= event.severity %></td>
         <td><%= event.organ %></td>
         <td><%= event.reaction %></td>
-        <td><%= link_to 'Edit', edit_patient_event_path(patient_id: event.patient.id, id: event.id) %></td>
+        <td><%= link_to 'Edit', edit_patient_event_path(@patient, event) %></td>
+        <td><%= link_to 'Destroy', patient_event_path(@patient, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         
       </tr>
     <% end %>

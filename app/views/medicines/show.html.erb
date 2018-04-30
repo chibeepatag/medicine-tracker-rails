@@ -35,5 +35,5 @@
   <%= @medicine.end_date %>
 </p>
 
-<%= link_to 'Edit', edit_medicine_path(@medicine) %> |
-<%= link_to 'Back', medicines_path %>
+<%= link_to 'Edit', [@patient, @medicine] %> |
+<%= link_to 'Back', patient_medicines_path(@patient) %>

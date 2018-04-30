@@ -19,15 +19,15 @@
   <tbody>
     <% @medicines.each do |medicine| %>
       <tr>
-        <td><%= medicine.class %></td>
+        <td><%= medicine.medicine_class %></td>
         <td><%= medicine.antibiotic %></td>
         <td><%= medicine.dose %></td>
         <td><%= medicine.frequency %></td>
         <td><%= medicine.route %></td>
         <td><%= medicine.start_date %></td>
         <td><%= medicine.end_date %></td>
-        <td><%= link_to 'Edit', edit_patient_medicine_path(patient_id: medicine.patient.id, id: medicine.id) %></td>
-        <td><%= link_to 'Destroy', patient_medicine_path(patient_id: medicine.patient.id, id: medicine.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_patient_medicine_path(@patient, medicine) %></td>
+        <td><%= link_to 'Destroy', patient_medicine_path(@patient, medicine), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

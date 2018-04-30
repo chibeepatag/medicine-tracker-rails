@@ -18,7 +18,6 @@
         <td><%= patient.name %></td>
         <td><%= link_to 'Events', patient_events_path(patient) %></td>
         <td><%= link_to 'Medicines', patient_medicines_path(patient) %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

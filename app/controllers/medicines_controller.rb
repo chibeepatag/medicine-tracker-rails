@@ -25,11 +25,11 @@ class MedicinesController < ApplicationController
   # POST /medicines
   # POST /medicines.json
   def create
-    @medicine = Medicine.new(medicine_params)
+    @medicine = @patient.medicines.new(medicine_params)
 
     respond_to do |format|
       if @medicine.save
-        format.html { redirect_to @medicine, notice: 'Medicine was successfully created.' }
+        format.html { redirect_to patient_medicines_path(@patient), notice: 'Medicine was successfully created.' }
         format.json { render :show, status: :created, location: @medicine }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MedicinesController < ApplicationController
   def update
     respond_to do |format|
       if @medicine.update(medicine_params)
-        format.html { redirect_to @medicine, notice: 'Medicine was successfully updated.' }
+        format.html { redirect_to patient_medicines_path(@patient), notice: 'Medicine was successfully updated.' }
         format.json { render :show, status: :ok, location: @medicine }
       else
         format.html { render :edit }
@@ -73,6 +73,6 @@ class MedicinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicine_params
-      params.require(:medicine).permit(:class, :antibiotic, :dose, :frequency, :route, :start_date, :end_date)
+      params.require(:medicine).permit(:medicine_class, :antibiotic, :dose, :frequency, :route, :start_date, :end_date)
     end
 end
