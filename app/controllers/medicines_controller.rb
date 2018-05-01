@@ -1,7 +1,7 @@
 class MedicinesController < ApplicationController
   before_action :set_patient
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
-
+  before_action :grouped_antibiotics, only: [:new, :edit]
   # GET /medicines
   # GET /medicines.json
   def index
@@ -74,5 +74,15 @@ class MedicinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicine_params
       params.require(:medicine).permit(:medicine_class, :antibiotic, :dose, :frequency, :route, :start_date, :end_date)
+    end
+
+    def grouped_antibiotics
+      @groued_antibiotics = {}
+      Antibiotic.all.each do |antibiotic|
+        if !@groued_antibiotics.key? antibiotic.antibiotic_class
+          @groued_antibiotics[antibiotic.antibiotic_class] = []
+        end
+        @groued_antibiotics[antibiotic.antibiotic_class] << antibiotic.name
+      end
     end
 end
