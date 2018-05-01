@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :class %>
-    <%= form.text_field :medicine_class, id: :medicine_medicine_class %>
+    <%= form.select(:medicine_class, Antibiotic.distinct.pluck(:antibiotic_class), {include_blank: true}, {id: "medicine_class"})%>
   </div>
 
   <div class="field">
     <%= form.label :antibiotic %>
-    <%= form.text_field :antibiotic, id: :medicine_antibiotic %>
+    <%= form.collection_select(:antibiotic, Antibiotic.order(:name), :name, :name, {include_blank: true}, {id: "antibitoic"})%>
   </div>
 
   <div class="field">

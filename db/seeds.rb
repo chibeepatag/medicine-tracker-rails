@@ -29,7 +29,7 @@ doses = [
 ]
 
 doses.each do |dose|
-	Dose.create(name: dose)
+  Dose.create(name: dose)
 end
 
 
@@ -45,7 +45,7 @@ frequencies =
 ]
 
 frequencies.each do |frequency|
-	Frequency.create(name: frequency)
+  Frequency.create(name: frequency)
 end
 
 
@@ -102,11 +102,134 @@ organ_reactions = [{
 ]
 
 organ_reactions.each do |org_rxn|
-	organ = Organ.create(name: org_rxn[:organ])
-	org_rxn[:reactions].each do |reaction|
-		organ.reactions.create(name: reaction)
-	end
+  organ = Organ.create(name: org_rxn[:organ])
+  org_rxn[:reactions].each do |reaction|
+    organ.reactions.create(name: reaction)
+  end
 end
 
 
+class_antibiotics = [
+    {
+    name: 'Aminoglycosides',
+    antibiotics: ['Amikacin',
+                  'Gentamicin',
+                  'Neomycin',
+                  'Tobramycin',
+                  'Streptomycin']
+  },
+  {
+    name: 'Ansamycins',
+    antibiotics: ['Rifaximin']
+  },
+  {
+    name: 'Carbapenems',
+    antibiotics: ['Ertapenem',
+                  'Imipenem',
+                  'Meropenem']
+  },
+  {
+    name: 'Cephalosporins',
+    antibiotics: ['Cephazolin',
+                  'Cephalothin',
+                  'Cephalexin',
+                  'Cefaclor',
+                  'Cefuroxime',
+                  'Ceftazidime ',
+                  'Ceftriaxone ',
+                  'Cefepime']
+  },
+  {
+    name: 'Glycopeptides',
+    antibiotics: ['Teicoplanin',
+                  'Vancomycin']
+  },
+  {
+    name: 'Lincosamides',
+    antibiotics: ['Clindamycin',
+                  'Lincomycin']
+  },
+  {
+    name: 'Lipopeptide',
+    antibiotics: ['Daptomycin']
+  },
+  {
+    name: 'Macrolides',
+    antibiotics: ['Azithromycin',
+                  'Clarithromycin',
+                  'Erythromycin',
+                  'Roxithromycin',
+                  'Spiramycin']
+  },
+  {
+    name: 'Monobactams',
+    antibiotics: ['Aztreonam']
+  },
+  {
+    name: 'Nitrofurans',
+    antibiotics: ['Nitrofurantoin']
+  },
+  {
+    name: 'Oxazolidinones',
+    antibiotics: ['Linezolid']
+  },
+  {
+    name: 'Penicillins',
+    antibiotics: ['Amoxicillin',
+                  'Augmentin',
+                  'Ampicillin',
+                  'Benzyl Penicillin',
+                  'Dicloxacillin',
+                  'Flucloxacillin',
+                  'Penicillin G',
+                  'Penicillin V',
+                  'Piperacillin',
+                  'Ticarcillin',
+                  'Tazocin',
+                  'Timentin']
+  },
+  {
+    name: 'Quinolones',
+    antibiotics: ['Ciprofloxacin',
+                  'Levofloxacin',
+                  'Moxifloxacin',
+                  'Norfloxacin']
+  },
+  {
+    name: 'Sulfonamides',
+    antibiotics: ['Sulfadiazine',
+                  'Sulfamethoxazole',
+                  'Trimethoprim-Sulfamethoxazole']
+  },
+  {
+    name: 'Tetracyclines',
+    antibiotics: ['Doxycycline',
+                  'Minocycline']
+  },
+  {
+    name: 'Other',
+    antibiotics: ['Metronidazole',
+                  'Trimethoprim',
+                  'Dapsone',
+                  'Ethambutol',
+                  'Isoniazid',
+                  'Pyrazinamide',
+                  'Rifampicin',
+                  'Rifabutin',
+                  'Streptomycin',
+                  'Chloramphenicol',
+                  'Tigecycline',
+                  'Fosfomycin',
+                  'Fusidic acid']
+  }
+]
+
+
+class_antibiotics.each do |class_antibiotic|
+  class_name = class_antibiotic[:name]
+  class_antibiotic[:antibiotics].each do |antibiotic|
+    Antibiotic.create(antibiotic_class: class_name, name: antibiotic)
+  end
+  
+end
 

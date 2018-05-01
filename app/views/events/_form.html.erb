@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :organ %>
-    <%= form.select(:organ, options_from_collection_for_select(Organ.all, :name, :name)) %>
+    <%= form.collection_select(:organ, Organ.order(:name), :name, :name, {include_blank: true}, {id: "organ"})%>
   </div>
 
   <div class="field">
     <%= form.label :reaction %>
-    <%= form.select(:reaction, options_from_collection_for_select(Reaction.all, :name, :name)) %>
+    <%= form.grouped_collection_select(:reaction, Organ.all, :reactions, :name, :name, :name, {include_blank: true}, {class: "reaction"})%>
   </div>
 
   <div class="actions">
