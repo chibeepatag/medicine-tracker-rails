@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'report/email'
+
   root to: 'patients#index'
   
   resources :patients do
