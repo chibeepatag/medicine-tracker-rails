@@ -90,4 +90,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.email_sender = "chibeepatag@yahoo.com"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    user_name:            'easiripple',
+    password:             'balmaidcalendula',
+    authentication:       'plain',
+    enable_starttls_auto: true  
+  }
 end
