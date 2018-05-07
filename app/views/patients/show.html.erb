@@ -26,12 +26,12 @@
   </thead>
   <tbody>
     <% @patient.events.each do |event| %>
-      <tr>
-        <td><%= event.event_date %></td>
-        <td><%= event.severity %></td>
-        <td><%= event.organ %></td>
-        <td><%= event.reaction %></td>
-        <td><%= link_to 'Edit', edit_patient_event_path(@patient, event) %></td>
+      <tr id="event_<%=event.id%>" class="event_row">
+        <td class="date"><%= event.event_date %></td>
+        <td class="severity"><%= event.severity %></td>
+        <td class="organ"><%= event.organ %></td>
+        <td class="reaction"><%= event.reaction %></td>
+        <td <%= link_to 'Edit', edit_patient_event_path(@patient, event) %></td>
         <td><%= link_to 'Destroy', patient_event_path(@patient, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -60,14 +60,14 @@
 
   <tbody>
     <% @patient.medicines.each do |medicine| %>
-      <tr>
-        <td><%= medicine.medicine_class %></td>
-        <td><%= medicine.antibiotic %></td>
-        <td><%= medicine.dose %></td>
-        <td><%= medicine.frequency %></td>
-        <td><%= medicine.route %></td>
-        <td><%= medicine.start_date %></td>
-        <td><%= medicine.end_date %></td>
+      <tr id="medicine_<%=medicine.id%>" class="medicine_row">
+        <td class="class"><%= medicine.medicine_class %></td>
+        <td class="antibiotic"><%= medicine.antibiotic %></td>
+        <td class="dose"><%= medicine.dose %></td>
+        <td class="frequency"><%= medicine.frequency %></td>
+        <td class="route"><%= medicine.route %></td>
+        <td class="start"><%= medicine.start_date %></td>
+        <td class="end"><%= medicine.end_date %></td>
         <td><%= link_to 'Edit', edit_patient_medicine_path(@patient, medicine) %></td>
         <td><%= link_to 'Destroy', patient_medicine_path(@patient, medicine), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -77,7 +77,7 @@
 <br>
 </p>
 
-
+<div id="timeline" style="height: 180px;"></div>
 
 <%= form_tag(report_email_path, method: "post") do %>
   <%= label_tag(:email, "Email:") %>
