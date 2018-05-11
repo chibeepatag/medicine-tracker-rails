@@ -5,17 +5,18 @@
         var chart = new google.visualization.Timeline(container);
         var dataTable = new google.visualization.DataTable();
 
-        dataTable.addColumn({ type: 'string', id: 'event_medicine' });
+        dataTable.addColumn({ type: 'string', id: 'Medicine/Reaction' });
+        dataTable.addColumn({ type: 'string', id: 'label' });
         dataTable.addColumn({ type: 'date', id: 'Start' });
         dataTable.addColumn({ type: 'date', id: 'End' });
 
 
         get_events().forEach(function(row){
-          dataTable.addRows([[row.label, row.date, row.date]])
+          dataTable.addRows([[row.id, row.label, row.start, row.end]])
         })
 
         get_medicines().forEach(function(row){
-          dataTable.addRows([[row.label, row.start, row.end]])
+          dataTable.addRows([[row.id, row.label, row.start, row.end]])
         })
 
         chart.draw(dataTable);
@@ -35,9 +36,11 @@ function get_events(){
   $(".event_row").each(function(row){
     var row_id = $(".event_row")[row].id
     var date_array = $("#"+row_id).find("td.date").html().split("-")
-    var date = new Date(date_array[0], date_array[1], date_array[2])
+    var start = new Date(date_array[0], date_array[1], date_array[2])
+
+    var end = new Date(date_array[0], date_array[1], start.getDate() + 1)
     var label = $("#"+row_id).find("td.reaction").html()
-    events.push({id: row_id, label: label, date: date})
+    events.push({id: row_id, label: label, start: start, end: end})
   });
   return events;
 }
