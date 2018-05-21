@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_patient
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
   # GET /events
   # GET /events.json

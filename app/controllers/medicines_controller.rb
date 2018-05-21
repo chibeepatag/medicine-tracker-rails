@@ -2,6 +2,8 @@ class MedicinesController < ApplicationController
   before_action :set_patient
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
   before_action :grouped_antibiotics, only: [:new, :edit]
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+
   # GET /medicines
   # GET /medicines.json
   def index
