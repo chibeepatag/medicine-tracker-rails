@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doses.each do |dose| %>
+      <tr>
+        <td><%= dose.id %></td>
+        <td><%= dose.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
