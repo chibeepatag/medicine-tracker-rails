@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Antibiotics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Class</th>
+      <th>Name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @antibiotics.each do |antibiotic| %>
+      <tr>
+        <td><%= antibiotic.id %></td>
+        <td><%= antibiotic.antibiotic_class %></td>
+        <td><%= antibiotic.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
