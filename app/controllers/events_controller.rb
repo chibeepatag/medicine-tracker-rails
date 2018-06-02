@@ -29,12 +29,12 @@ class EventsController < ApplicationController
   def create
     @patient = Patient.find(params[:patient_id])
     puts event_params
-    @event = @patient.events.new(event_params)
+    @event = @patient.events.build(event_params)
 
     respond_to do |format|
       if @event.save
         format.html { redirect_to patient_path(@patient), notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
+        format.json { render :show, status: :created }
       else
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
