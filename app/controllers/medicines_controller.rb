@@ -32,7 +32,7 @@ class MedicinesController < ApplicationController
     respond_to do |format|
       if @medicine.save
         format.html { redirect_to patient_path(@patient), notice: 'Medicine was successfully created.' }
-        format.json { render :show, status: :created, location: @medicine }
+        format.json { render :show, status: :created }
       else
         format.html { render :new }
         format.json { render json: @medicine.errors, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class MedicinesController < ApplicationController
     respond_to do |format|
       if @medicine.update(medicine_params)
         format.html { redirect_to patient_path(@patient), notice: 'Medicine was successfully updated.' }
-        format.json { render :show, status: :ok, location: @medicine }
+        format.json { render :show, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @medicine.errors, status: :unprocessable_entity }
