@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180430100454) do
+ActiveRecord::Schema.define(version: 20180603132300) do
 
   create_table "antibiotics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "antibiotic_class"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180430100454) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "patient_id"
-    t.date "event_date"
+    t.datetime "event_date"
     t.string "severity"
     t.string "organ"
     t.string "reaction"
