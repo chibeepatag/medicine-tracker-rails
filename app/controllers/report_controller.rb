@@ -11,7 +11,8 @@ class ReportController < ApplicationController
   def sendEmailFromApp
       @email = patient_params[:email]
 
-      #send email logic here
+      #send email logic here, return json with "message". The message will be shown in the app.
+      #example: if (success) { message = successfull message } else { message = error message }
 
       render json: {"message": "Not yet implemented.\n\nSample message: Report for " + @patient.name + " was successfully sent to " + @email + "."}
   end
