@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post 'report/email'
+  post 'report/sendEmailFromApp'
 
   root to: 'patients#index'
 
