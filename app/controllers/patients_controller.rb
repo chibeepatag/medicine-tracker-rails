@@ -5,12 +5,13 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.all   
   end
 
   # GET /patients/1
   # GET /patients/1.json
   def show
+    get_chart_data
   end
 
   # GET /patients/new
@@ -71,5 +72,18 @@ class PatientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
       params.require(:patient).permit(:urn, :name)
+    end
+
+    def get_chart_data
+      @chart_data = []
+      
+      @patient.medicines.each do |medicine|
+        @chart_data << [medicine.antibiotic, medicine.start_date.strftime("%Y-%m-%d"), medicine.end_date.strftime("%Y-%m-%d")]
+      end
+      
+      
+      @patient.events.each do |event|
+        @chart_data << [event.reaction, event.event_date.strftime("%Y-%m-%d"), event.event_date.strftime("%Y-%m-%d")]
+      end
     end
 end
