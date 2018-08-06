@@ -77,7 +77,7 @@
 <br>
 </p>
 
-<%= timeline @chart_data %>
+<%= timeline @chart_data, download: true %>
 
 <%= form_tag(report_email_path, method: "post") do %>
   <%= label_tag(:email, "Email:") %>

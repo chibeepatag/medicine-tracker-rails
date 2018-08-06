@@ -83,7 +83,8 @@ class PatientsController < ApplicationController
       
       
       @patient.events.each do |event|
-        @chart_data << [event.reaction, event.event_date.strftime("%Y-%m-%d"), event.event_date.strftime("%Y-%m-%d")]
+        end_date = event.event_date + 1.day
+        @chart_data << [event.reaction, event.event_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")]
       end
     end
 end
