@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Antibiotic Classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @antibiotic_classes.each do |antibiotic_class| %>
+      <tr>
+        <td><%= antibiotic_class.class_name %></td>
+        <td><%= link_to 'Show', antibiotic_class %></td>
+        <td><%= link_to 'Edit', edit_antibiotic_class_path(antibiotic_class) %></td>
+        <td><%= link_to 'Destroy', antibiotic_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Antibiotic Class', new_antibiotic_class_path %>

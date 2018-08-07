@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: PO
 
 two:
-  name: MyString
+  name: IV
+
+three:
+  name: IM
+
+four:
+  name: INH
+
+five:
+  name: Conj

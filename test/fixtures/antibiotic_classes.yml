@@ -1,0 +1,50 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Aminoglycosides
+
+two:
+  name: Ansamycins
+
+three:
+  name: Carbapenems
+
+four:
+  name: Cephalosporins
+
+five:
+  name: Glycopeptides
+
+six:
+  name: Lincosamides
+
+seven:
+  name: Lipopeptide
+
+eight:
+  name: Macrolides
+
+nine:
+  name: Monobactams
+
+ten:
+  name: Nitrofurans
+
+eleven:
+  name: Oxazolidinones
+
+twelve:  
+  name: Penicillins
+
+thirteen:
+  name: Quinolones
+
+fourteen:
+  name: Sulfonamides
+
+fifteen:
+  name: Tetracyclines
+
+sixteen:
+  name: Other
+   

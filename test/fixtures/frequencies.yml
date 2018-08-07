@@ -1,7 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Daily
 
 two:
-  name: MyString
+  name: BD
+
+three:
+  name: TDS
+
+four:
+  name: QID
+
+five:
+  name: 4 hourly
+
+six:
+  name: Stat
+
+seven:
+  name: PRN

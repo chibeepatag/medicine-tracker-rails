@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :antibiotic_classes
   post 'report/email'
   post 'report/sendEmailFromApp'
 

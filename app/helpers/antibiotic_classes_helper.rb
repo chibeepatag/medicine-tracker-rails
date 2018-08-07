@@ -1,0 +1,2 @@
+module AntibioticClassesHelper
+end

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  urn: MyString
-  name: MyString
+  urn: LS02910
+  name: Harris Lean
 
 two:
-  urn: MyString
-  name: MyString
+  urn: JPW1981
+  name: Inigo Montoya

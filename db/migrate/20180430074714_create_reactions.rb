@@ -1,7 +1,7 @@
 class CreateReactions < ActiveRecord::Migration[5.1]
   def change
     create_table :reactions do |t|
-      t.integer :organ_id      
+      t.references :organ
       t.string :name
 
       t.timestamps

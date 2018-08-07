@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  class: MyString
-  antibiotic: MyString
-  dose: MyString
-  frequency: MyString
-  route: MyString
+  patient: one
+  antibiotic: one
+  dose: one
+  frequency: one
+  route: one
   start_date: 2018-04-28
   end_date: 2018-04-28
 
 two:
-  class: MyString
-  antibiotic: MyString
-  dose: MyString
-  frequency: MyString
-  route: MyString
+  patient: two
+  antibiotic: two
+  dose: two
+  frequency: two
+  route: two
   start_date: 2018-04-28
   end_date: 2018-04-28

@@ -1,11 +1,11 @@
 class CreateEvents < ActiveRecord::Migration[5.1]
   def change
     create_table :events do |t|
-      t.integer :patient_id
+      t.references :patient
       t.date :event_date
-      t.string :severity
-      t.string :organ
-      t.string :reaction
+      t.references :severity
+      t.references :organ
+      t.references :reaction
 
       t.timestamps
     end

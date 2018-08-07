@@ -1,0 +1,22 @@
+<%= form_with(model: antibiotic_class, local: true) do |form| %>
+  <% if antibiotic_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(antibiotic_class.errors.count, "error") %> prohibited this antibiotic_class from being saved:</h2>
+
+      <ul>
+      <% antibiotic_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :class_name %>
+    <%= form.text_field :class_name, id: :antibiotic_class_class_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

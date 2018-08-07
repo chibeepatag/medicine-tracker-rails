@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Skin
 
 two:
-  name: MyString
+  name: GI Tract
+
+three:
+  name: Respiratory
+
+four:
+  name: Cardiovascular

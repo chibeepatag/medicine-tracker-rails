@@ -1,7 +1,43 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: 50mg
 
 two:
-  name: MyString
+  name: 100mg
+
+three: 
+  name: 200mg
+
+four: 
+  name: 250mg
+
+five: 
+  name: 300mg
+
+six:
+  name: 350mg
+
+seven:
+  name: 400mg
+
+eight:
+  name: 500mg
+
+nine:
+  name: 750mg
+
+ten:
+  name: 1g
+
+eleven:
+  name: 1.25g
+
+twelve:
+  name: 1.5g
+
+thriteen:
+  name:  2g
+
+fourteen:
+  name: 4.5g

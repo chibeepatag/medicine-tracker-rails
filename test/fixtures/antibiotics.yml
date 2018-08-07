@@ -1,9 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  antibiotic_class: MyString
-  name: MyString
+  antibiotic_class: one
+  name: Amikacin
 
 two:
-  antibiotic_class: MyString
-  name: MyString
+  antibiotic_class: one
+  name: Gentamicin
+
+three: 
+  antibiotic_class: one
+  name: Neomycin
+
+four:
+  antibiotic_class: one
+  name: Tobramycin
+
+five:
+  antibiotic_class: one
+  name: Streptomycin
+
+six:
+  antibiotic_class: two
+  name: Rifaximin
