@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = @patient.events.order(:organ)
+    @events = @patient.events.order(:event_date)
   end
 
   # GET /events/1

@@ -7,7 +7,7 @@ class MedicinesController < ApplicationController
   # GET /medicines
   # GET /medicines.json
   def index
-    @medicines = @patient.medicines.order(:antibiotic)
+    @medicines = @patient.medicines.order(:start_date)
   end
 
   # GET /medicines/1
