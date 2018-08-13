@@ -23,6 +23,8 @@ test:
   <<: *default
   adapter: mysql2
   database: medicine_tracker_test
+  username: root
+  password: 
 
 production:
   <<: *default
